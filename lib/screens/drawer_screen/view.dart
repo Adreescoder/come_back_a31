@@ -23,10 +23,10 @@ class Drawer_screenPage extends StatelessWidget {
           padding: EdgeInsets.zero,
           children: [
             const UserAccountsDrawerHeader(
-              accountName: Text("Malik Adrees"),
-              accountEmail: Text("malikAdrees@gmail.com"),
+              accountName: Text("Bilal Saeed Jh"),
+              accountEmail: Text("BilalSaeedJh@gmail.com"),
               currentAccountPicture: CircleAvatar(
-                backgroundImage: AssetImage('assets/images/img.jpg'),
+                backgroundImage: AssetImage('assets/sir/sir.jpg'),
               ),
               otherAccountsPictures: [
                 CircleAvatar(child: Icon(Icons.person)),
@@ -106,7 +106,7 @@ _buildDrawerItem(IconData icon, String title, VoidCallback onTap) {
       // Show the confirmation dialog
       Get.dialog(
         AlertDialog(
-          title: Text('Confirm'),
+          title: const Text('Confirm'),
           content: Text('Do you want to switch to $title?'),
           actions: [
             TextButton(
@@ -335,6 +335,7 @@ class TweetItem extends StatelessWidget {
                 Text("@username"),
               ],
             ),
+
             // Tweet text
             const SizedBox(height: 8),
             const Text(
@@ -356,9 +357,9 @@ class TweetItem extends StatelessWidget {
                   icon: const Icon(Icons.comment),
                   onPressed: () {},
                 ),
-                Spacer(),
+                const Spacer(),
                 IconButton(
-                  icon: Icon(Icons.more_vert),
+                  icon: const Icon(Icons.more_vert),
                   onPressed: () {},
                 ),
               ],
