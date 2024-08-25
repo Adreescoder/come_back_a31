@@ -3,10 +3,12 @@ import 'package:flutter/material.dart';
 class PersonPage extends StatelessWidget {
   const PersonPage({super.key});
 
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        title: const Text("Person"),
+      ),
       body: SingleChildScrollView(
         child: Column(
           children: [
@@ -18,8 +20,8 @@ class PersonPage extends StatelessWidget {
                   width: double.infinity,
                   decoration: const BoxDecoration(
                     image: DecorationImage(
-                      image: AssetImage('assets/images/img.jpg'), // Replace with your image asset
-                      fit: BoxFit.fill,
+                      image: AssetImage('assets/images/cover.jpg'), // Replace with your cover image
+                      fit: BoxFit.cover,
                     ),
                   ),
                 ),
@@ -32,7 +34,27 @@ class PersonPage extends StatelessWidget {
                     backgroundColor: Colors.white,
                     child: CircleAvatar(
                       radius: 45,
-                      backgroundImage: AssetImage('assets/images/img.jpg'), // Replace with your image asset
+                      backgroundImage: AssetImage('assets/images/profile.jpg'), // Replace with your profile image
+                    ),
+                  ),
+                ),
+                // VIP Badge
+                Positioned(
+                  top: 20,
+                  right: 20,
+                  child: Container(
+                    padding: const EdgeInsets.symmetric(horizontal: 8.0, vertical: 4.0),
+                    decoration: BoxDecoration(
+                      color: Colors.yellow,
+                      borderRadius: BorderRadius.circular(12),
+                    ),
+                    child: const Text(
+                      'VIP',
+                      style: TextStyle(
+                        color: Colors.black,
+                        fontWeight: FontWeight.bold,
+                        fontSize: 16,
+                      ),
                     ),
                   ),
                 ),
@@ -118,7 +140,6 @@ class PersonPage extends StatelessWidget {
                     height: 500, // Adjust the height according to your needs
                     child: TabBarView(
                       children: [
-                        // Replace with your dynamic content
                         _buildTweetsTab(),
                         _buildTweetsTab(),
                         _buildMediaTab(),
@@ -145,6 +166,7 @@ class PersonPage extends StatelessWidget {
           ),
           title: Text("This is a tweet"), // Replace with dynamic data
           subtitle: Text("2h ago"), // Replace with dynamic data
+          trailing: Icon(Icons.more_vert),
         );
       },
     );
